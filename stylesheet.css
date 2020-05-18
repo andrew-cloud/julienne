@@ -1,3 +1,13 @@
-.previous-step {
+#current-step {
 	color: grey;
+}
+
+#next-step {
+	font-size: 2em;
+}
+
+#step-container {
+	margin: 48px auto;
+	display: block;
+	width: 600px;
 }
