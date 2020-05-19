@@ -14,7 +14,8 @@ var recipe = [
 	"In a 10-inch or 12-inch skillet, melt butter over medium heat.",
 	"Dip bread in egg mixture.",
 	"Fry slices until golden brown, then flip to cook the other side.",
-	"Serve with syrup."
+	"Serve with syrup.",
+	"Fin."
 ];
 
 // set current step text
@@ -74,13 +75,18 @@ function updateStepsText(){
 // sets the initial steps for the recipe
 updateStepsText();
 
+// goes to next step
+function goToNextStep() {
+	nextSteps();
+	updateStepsText();
+	console.log("hi");
+}
+
 // right arrow keys moves steps forward and back
 window.addEventListener('keydown', function(e) {
 	console.log(e.keyCode);
 	if (e.keyCode == `39` && isThereNextStep()) {
-		nextSteps();
-		updateStepsText();
-		console.log("hi");
+		goToNextStep();
 	}
 	if (e.keyCode == `37` && isTherePreviousStep()) {
 		previousSteps();
@@ -88,3 +94,23 @@ window.addEventListener('keydown', function(e) {
 		console.log("hey");
 	}
 })
+
+//ANNYANG!
+
+if (annyang) {
+  // Let's define a command.
+  var commands = {
+    'hello': function() { alert('Hello world!'); }
+  };
+
+  var commands2 = {
+    'next': function() {goToNextStep()}
+  };
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+  annyang.addCommands(commands2);
+
+  // Start listening.
+  annyang.start();
+}
