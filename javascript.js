@@ -9,11 +9,12 @@ var next_step_text = document.getElementById("next-step");
 
 // test recipe
 var recipe = [
-	"step1",
-	"step2",
-	"step3",
-	"step4",
-	"step5"
+	"In a small bowl, combine cinnamon, nutmeg, and sugar and set aside briefly.",
+	"Whisk together cinnamon mixture, eggs, milk, and vanilla and pour into a shallow container such as a pie plate.",
+	"In a 10-inch or 12-inch skillet, melt butter over medium heat.",
+	"Dip bread in egg mixture.",
+	"Fry slices until golden brown, then flip to cook the other side.",
+	"Serve with syrup."
 ];
 
 // set current step text
