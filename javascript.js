@@ -82,6 +82,13 @@ function goToNextStep() {
 	console.log("hi");
 }
 
+// goes to previous step
+function goToPreviousStep() {
+	previousSteps();
+	updateStepsText();
+	console.log("hey");
+}
+
 // right arrow keys moves steps forward and back
 window.addEventListener('keydown', function(e) {
 	console.log(e.keyCode);
@@ -89,9 +96,7 @@ window.addEventListener('keydown', function(e) {
 		goToNextStep();
 	}
 	if (e.keyCode == `37` && isTherePreviousStep()) {
-		previousSteps();
-		updateStepsText();
-		console.log("hey");
+		goToPreviousStep();
 	}
 })
 
@@ -103,14 +108,20 @@ if (annyang) {
     'hello': function() { alert('Hello world!'); }
   };
 
-  var commands2 = {
+  var commands_next = {
     'next': function() {goToNextStep()}
   };
 
+var commands_back = {
+    'back': function() {goToPreviousStep()}
+  };
+ 
+
   // Add our commands to annyang
-  annyang.addCommands(commands);
-  annyang.addCommands(commands2);
+  //annyang.addCommands(commands);
+  annyang.addCommands(commands_next);
+  annyang.addCommands(commands_back);
 
   // Start listening.
-  annyang.start();
+  annyang.start({ autoRestart: true, continuous: false });
 }
