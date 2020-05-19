@@ -1,9 +1,10 @@
 #current-step {
 	color: grey;
+	font-size: 2em;
 }
 
 #next-step {
-	font-size: 2em;
+	color: grey;
 }
 
 #step-container {
